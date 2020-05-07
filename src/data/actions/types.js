@@ -1,0 +1,10 @@
+export const GET_LOGS = 'get logs';
+export const ADD_LOGS = 'add logs';
+export const DELETE_LOGS = 'delete log';
+export const UPDATE_LOGS = 'update log';
+export const CURRENT_LOGS = 'current logs';
+export const SET_LOADING = 'set loading';
+export const SEARCH_LOGS = 'search logs';
+export const ADD_TECHS = 'Add techs';
+export const GET_TECHS = 'get techs';
+export const DELETE_TECHS = 'delete techs';

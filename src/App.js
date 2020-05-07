@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
+import Search from './components/layout/Search';
+import FloatIcons from './components/layout/FloatIcons';
+import M from 'materialize-css';
+import Logs from './components/logs/Logs';
+import EditLog from './components/logs/EditLog';
+import AddLog from './components/logs/AddLog';
+import AddTechs from './components/techs/AddTechs';
+import ViewTechs from './components/techs/ViewTechs';
+import { store } from './data/store';
 
 function App() {
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Search />
+      <div className="container">
+        <Logs />
+      </div>
+      <AddLog />
+      <EditLog />
+      <AddTechs />
+      <ViewTechs />
+      <FloatIcons />
+    </Provider>
   );
 }
 
